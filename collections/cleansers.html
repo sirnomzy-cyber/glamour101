@@ -121,6 +121,28 @@ h1{font-size:clamp(46px,6.4vw,92px);line-height:1;letter-spacing:-.02em;margin:1
 @media(max-width:680px){.tiles{grid-template-columns:repeat(3,1fr)}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important}.js .rv{opacity:1!important;translate:none!important}}
 
+/* ---- photo theme: ivory + champagne surfaces, deep charcoal text ---- */
+:root{--black:#1d1a1c;--ivory:#fbf7f1;--champ2:#f7efe2;--line:#e9dfd0}
+.band{background:var(--champ2);border-block:1px solid #eadcc6}.tst{background:var(--champ2)}
+.fl{display:none!important}
+.pimg{background:#efe4d3}.pimg:before{display:none}
+.pimg img,.tile img,.sbox img,.cim img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--op,50% 50%);scale:var(--z,1);transition:scale .9s var(--e)}
+.prod:hover .pimg img,.cat:hover .cim img,.tile:hover img{scale:calc(var(--z,1)*1.06)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hero2{background:var(--ivory)}.hero2-img{overflow:hidden;position:relative;background:#ecd9d2;aspect-ratio:2/1;max-height:82vh}.hero2-img img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 40%;animation:kb 22s ease-out both}
+@keyframes kb{from{transform:scale(1.07)}to{transform:scale(1)}}
+.hero2-in{max-width:780px;margin:auto;text-align:center;padding:54px 5% 66px}.hero2-in h2{font-size:clamp(34px,4.4vw,54px);line-height:1.1;margin:12px 0 0}.hero2-in p{color:#4b4247;font-size:17px;margin:14px auto 28px;max-width:580px}.hero2-in .btn+.btn{margin-left:10px}
+@media(max-width:700px){.hero2-img{aspect-ratio:1.45/1}.hero2-in .btn{display:block;margin:0 0 10px!important}}
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 22px}
+.cat,.cat:hover{display:block;min-height:0;padding:0;background:none!important;color:var(--black)!important;overflow:visible;position:static;transform:none}.cat:after{display:none}
+.cim{aspect-ratio:4/5;overflow:hidden;position:relative;background:#efe4d3;box-shadow:0 18px 40px #6b4b1a14}
+.cap{display:flex;justify-content:space-between;align-items:baseline;padding:14px 2px 12px;border-bottom:1px solid var(--line)}.cat h3{font-size:30px}.cat .cap span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--rose);margin:0}
+.sbox{background:#efe4d3}.sbox span{display:none}
+.pph{aspect-ratio:4/5;max-width:400px;width:100%;margin:auto;position:relative;overflow:hidden;background:#241f21;box-shadow:0 30px 70px #0006}.pph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.pph:after{content:"";position:absolute;inset:14px;border:1px solid var(--gold);opacity:.7;pointer-events:none}
+.tile{position:relative;background:#efe4d3}.tile .ic{display:none}
+.news{background:linear-gradient(135deg,#f1e1c8,#f9f2e6 55%,#f1e1c8);background-size:200% 200%}
+@media(max-width:900px){.cats{grid-template-columns:1fr 1fr}}@media(max-width:560px){.cats{gap:26px 12px}.cat h3{font-size:23px}.cap span{display:none}.cap{padding-top:10px}}
+
 .nav a.act{color:var(--rose)}
 .ph{background:linear-gradient(120deg,var(--blush2),var(--blush) 60%,var(--champ));background-size:200% 200%;animation:shim 14s ease infinite;text-align:center;padding:64px 5% 56px;position:relative;overflow:hidden}
 .crumb{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}.crumb a:hover{color:var(--rose)}
@@ -147,8 +169,14 @@ h1{font-size:clamp(46px,6.4vw,92px);line-height:1;letter-spacing:-.02em;margin:1
 @media(max-width:900px){.shop{grid-template-columns:1fr;padding-top:30px}.fbtn{display:block}.grid{grid-template-columns:repeat(2,1fr)!important;gap:24px 12px}.vw{display:none}
 .side{position:fixed;left:0;top:0;bottom:0;width:min(86%,340px);background:var(--ivory);z-index:51;padding:24px;overflow:auto;transform:translateX(-105%);transition:transform .3s;align-self:auto}.sx{display:block;float:right;font-size:26px}.fopen .side{transform:none}.fopen .back{opacity:1;visibility:visible}.tb .cn{width:100%}.tb input[type=search]{flex:1}}
 
+.ph{--flip:1;position:relative;text-align:left;padding:80px 5% 72px max(5%,calc((100% - 1320px)/2 + 64px));min-height:330px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;animation:none;background:#f3e8d6}
+.ph:before{content:"";position:absolute;inset:0 0 0 40%;background:var(--phimg,url(/images/strip-products.jpg)) center/cover no-repeat;transform:scaleX(var(--flip));z-index:0}
+.ph:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#fbf7f1 0%,#f8efe0 38%,rgba(248,239,224,.5) 46%,rgba(248,239,224,0) 58%);z-index:1}
+.ph>*{position:relative;z-index:2}.ph h1{font-size:clamp(40px,5.2vw,68px);margin:14px 0 10px;max-width:640px;text-align:left}.ph p{margin:0;max-width:500px}.pills{justify-content:flex-start;max-width:760px}.crumb{text-align:left}
+@media(max-width:760px){.ph{padding:52px 6% 48px;min-height:0}.ph:before{inset:0}.ph:after{background:linear-gradient(180deg,rgba(251,247,241,.93),rgba(248,239,224,.84))}}
+
 .ov{position:absolute;inset:0;z-index:1}.prod h3 a:hover{color:var(--rose)}
-.pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:28px;position:relative;z-index:3}.pills a{padding:9px 18px;border:1px solid #d9b8c0;background:#ffffffb3;font-size:11px;letter-spacing:.14em;text-transform:uppercase;transition:.25s}.pills a:hover,.pills a.on{background:var(--black);color:#fff;border-color:var(--black)}
+.pills{display:flex;gap:8px;justify-content:flex-start;flex-wrap:wrap;margin-top:28px;position:relative;z-index:3}.pills a{padding:9px 18px;border:1px solid #d9b8c0;background:#ffffffb3;font-size:11px;letter-spacing:.14em;text-transform:uppercase;transition:.25s}.pills a:hover,.pills a.on{background:var(--black);color:#fff;border-color:var(--black)}
 @media(max-width:680px){.pills{flex-wrap:nowrap;overflow:auto;justify-content:flex-start;padding-bottom:6px}.pills a{white-space:nowrap}}
 </style>
 <script>document.documentElement.classList.add("js")</script>
@@ -205,7 +233,7 @@ h1{font-size:clamp(46px,6.4vw,92px);line-height:1;letter-spacing:-.02em;margin:1
 <aside class="drw" aria-label="Shopping bag"><div class="dh"><h3>Your bag <span id="dq">(0)</span></h3><button class="ib" id="cl" aria-label="Close" style="font-size:26px">×</button></div><div class="items" id="it"></div><div class="li" style="border:0"><span>Subtotal</span><b id="st">$0.00</b></div><button class="btn" id="co">View bag &amp; checkout</button><p style="font-size:11px;color:var(--muted);text-align:center;margin:10px 0 0">Shipping and taxes are calculated at checkout.</p></aside>
 <div class="toast" id="ts" role="status"></div>
 <script>
-const CUR='$',PAGE=12,FK='',P=[{"u": "gentle-foaming-cleanser", "id": 4, "n": "Gentle Foaming Cleanser", "c": "Skincare", "p": 16, "t": "Bestseller", "s": 1, "i": "pol", "k": "Cleansers", "r": 0}, {"u": "cleansing-balm", "id": 10, "n": "Cleansing Balm", "c": "Skincare", "p": 21, "t": "New", "s": 1, "i": "pol", "k": "Cleansers", "r": 12}, {"u": "deep-cleanse-face-wash", "id": 15, "n": "Deep Cleanse Face Wash", "c": "Skincare", "p": 18, "t": "", "s": 1, "i": "pol", "k": "Cleansers", "r": 13}, {"u": "micellar-water", "id": 23, "n": "Micellar Water", "c": "Skincare", "p": 14, "t": "", "s": 1, "i": "pol", "k": "Cleansers", "r": 18}];
+const CUR='$',PAGE=12,FK='',P=[{"u": "gentle-foaming-cleanser", "id": 4, "n": "Gentle Foaming Cleanser", "c": "Skincare", "p": 16, "t": "Bestseller", "s": 1, "i": "pol", "k": "Cleansers", "r": 0, "im": "skincare", "st": "object-position:50% 0%;transform-origin:100% 10%;--z:1.9", "gs": ["object-position:50% 50%;transform-origin:100% 0%;--z:1.9", "object-position:50% 50%;transform-origin:39% 73%;--z:1.8", "object-position:50% 50%;transform-origin:62% 0%;--z:1.7"]}, {"u": "cleansing-balm", "id": 10, "n": "Cleansing Balm", "c": "Skincare", "p": 21, "t": "New", "s": 1, "i": "pol", "k": "Cleansers", "r": 12, "im": "skincare", "st": "object-position:50% 100%;transform-origin:39% 50%;--z:1.8", "gs": ["object-position:50% 50%;transform-origin:39% 73%;--z:1.8", "object-position:50% 50%;transform-origin:0% 92%;--z:1.9", "object-position:50% 50%;transform-origin:8% 4%;--z:1.9"]}, {"u": "deep-cleanse-face-wash", "id": 15, "n": "Deep Cleanse Face Wash", "c": "Skincare", "p": 18, "t": "", "s": 1, "i": "pol", "k": "Cleansers", "r": 13, "im": "skincare", "st": "object-position:50% 100%;transform-origin:0% 76%;--z:1.9", "gs": ["object-position:50% 50%;transform-origin:0% 92%;--z:1.9", "object-position:50% 50%;transform-origin:62% 0%;--z:1.7", "object-position:50% 50%;transform-origin:100% 0%;--z:1.9"]}, {"u": "micellar-water", "id": 23, "n": "Micellar Water", "c": "Skincare", "p": 14, "t": "", "s": 1, "i": "pol", "k": "Cleansers", "r": 18, "im": "skincare", "st": "object-position:50% 0%;transform-origin:62% 0%;--z:1.7", "gs": ["object-position:50% 50%;transform-origin:62% 0%;--z:1.7", "object-position:50% 50%;transform-origin:8% 4%;--z:1.9", "object-position:50% 50%;transform-origin:39% 73%;--z:1.8"]}];
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],fmt=n=>CUR+n.toFixed(2);
 let cart=[];try{cart=JSON.parse(localStorage.getItem('g101')||'[]')}catch(e){}
 const F={cat:new Set,st:new Set,tag:new Set};let shown=PAGE;
@@ -219,7 +247,7 @@ function sync(){for(const k in F)F[k]=new Set($$('[data-k="'+k+'"]:checked').map
 function list(){const q=$('#q').value.trim().toLowerCase(),m=+$('#pr').value,s=$('#so').value;
 let L=P.filter(x=>(!F.cat.size||F.cat.has(x[FK]))&&(!F.tag.size||F.tag.has(x.t))&&(!F.st.size||F.st.has(x.s?'In stock':'Out of stock'))&&x.p<=m&&(!q||(x.n+' '+x.c+' '+x.k).toLowerCase().includes(q)));
 const o={b:(a,b)=>a.r-b.r,pa:(a,b)=>a.p-b.p,pd:(a,b)=>b.p-a.p,az:(a,b)=>a.n.localeCompare(b.n),za:(a,b)=>b.n.localeCompare(a.n),n:(a,b)=>b.id-a.id}[s];return o?L.sort(o):L}
-function card(x,k){return'<article class="prod" style="--d:'+(k%PAGE)*.05+'s"><div class="pimg p'+(x.id%4+1)+'"><svg class="ic pi" aria-hidden="true"><use href="#'+x.i+'"/></svg><a class="ov" href="/products/'+x.u+'" aria-label="'+x.n+'"></a>'+(x.s?(x.t?'<span class="tag">'+x.t+'</span>':''):'<span class="tag so">Sold out</span>')+'<button class="add" data-id="'+x.id+'"'+(x.s?'>Add to bag':' disabled>Sold out')+'</button></div><small>'+(x.k||x.c)+'</small><h3><a href="/products/'+x.u+'">'+x.n+'</a></h3><p class="pr">'+fmt(x.p)+'</p></article>'}
+function card(x,k){return'<article class="prod" style="--d:'+(k%PAGE)*.05+'s"><div class="pimg"><img src="/images/p-'+x.im+'-s.jpg" alt="'+x.n+'" loading="lazy" style="'+x.st+'"><a class="ov" href="/products/'+x.u+'" aria-label="'+x.n+'"></a>'+(x.s?(x.t?'<span class="tag">'+x.t+'</span>':''):'<span class="tag so">Sold out</span>')+'<button class="add" data-id="'+x.id+'"'+(x.s?'>Add to bag':' disabled>Sold out')+'</button></div><small>'+(x.k||x.c)+'</small><h3><a href="/products/'+x.u+'">'+x.n+'</a></h3><p class="pr">'+fmt(x.p)+'</p></article>'}
 function render(){const L=list(),v=L.slice(0,shown),m=+$('#pr').value;
 $('#pv').textContent='Up to '+fmt(m);$('#grid').innerHTML=v.map(card).join('');
 $('#cnt').textContent=L.length+(L.length===1?' product':' products');$('#no').style.display=L.length?'none':'block';$('#mo').style.display=L.length?'':'none';
